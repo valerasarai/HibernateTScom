@@ -1,0 +1,48 @@
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/hibernate</property>
+        <property name="connection.username">root</property>
+
+        <!--on work computer-->
+        <!--<property name="connection.password">root</property>-->
+
+        <!--on home computer-->
+        <property name="connection.password">root123</property>
+
+        <!--<property name="connection.pool_size">1</property>-->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="current_session_context_class">thread</property>
+
+        <!--Second level cache Disabled-->
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+        <!--Second level cache configure-->
+        <!--<property name="cache.use_second_level_cache">true</property>-->
+        <!--<property name="cache.provider_class">org.hibernate.cache.ehcache.StrategyRegistrationProviderImpl</property>-->
+        <!--<property name="cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>-->
+
+        <property name="show_sql">true</property>
+
+        <!-- Drop and re-create -->
+        <!--<property name="hbm2ddl.auto">create</property>-->
+
+        <!-- Drop and create-drop -->
+        <!--<property name="hbm2ddl.auto">create-drop</property>-->
+
+        <!-- update -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- validate -->
+        <!--<property name="hbm2ddl.auto">validate</property>-->
+
+
+        <!-- Mappring used for class entity with annotation from JPA -->
+        <!--<mapping class="au.com.ozblog.hibernate.h2.example.User"/>-->
+
+        <!-- Mappring used for hibernate native hbm.xml -->
+        <mapping resource="com/valerastudy/example3/BookEx3.hbm.xml"/>
+
+    </session-factory>
+</hibernate-configuration>

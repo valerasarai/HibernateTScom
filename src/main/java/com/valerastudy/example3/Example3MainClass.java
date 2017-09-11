@@ -1,18 +1,22 @@
-package com.valerastudy.example2;
+package com.valerastudy.example3;
+/*
+    Aici este aceeasi fignea ca in exemplu 2 numai ca pe mySQL, pentru a vedea concret ce se intimpla
+    este ambiguu acest H2
+*/
 
-import com.valerastudy.example1.BookEx1;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import java.util.Scanner;
 
-public class Example2MainClass {
+public class Example3MainClass {
 
-    public static String hibernateCfgXml = "com\\valerastudy\\example2\\hibernate.cfg.xml";
+
+    public static String hibernateCfgXml = "com\\valerastudy\\example3\\hibernate.cfg.xml";
 
     public static void main(String[] args) {
-        BookEx2 book = new BookEx2();
+        BookEx3 book = new BookEx3();
         book.setBookName("Book 1");
         book.setBookCategory("Category 1");
 
@@ -42,14 +46,14 @@ public class Example2MainClass {
         session = sessionFactory.openSession();
         session.beginTransaction();
 
-        book = session.get(BookEx2.class, 1);
+        book = session.get(BookEx3.class, 1);
 
         session.getTransaction().commit();
         session.close();
 
         System.out.println("Book reseted before loading from DB: [id = " + book.getBookName() + ", name = " + book.getBookCategory() + "]");
 
-      //close SessionFactory
+        //close SessionFactory
         sessionFactory.close();
     }
 }

@@ -5,13 +5,16 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 public class Example1MainClass {
+
+    public static String hibernateCfgXml = "com\\valerastudy\\example1\\hibernate.cfg.xml";
+
     public static void main(String[] args) {
         BookEx1 book = new BookEx1();
         book.setBookId(1);
         book.setBookName("Book 1");
 
         //open SessionFactory
-        SessionFactory sessionFactory = new Configuration().configure("com\\valerastudy\\example1\\hibernate.cfg.xml").buildSessionFactory();
+        SessionFactory sessionFactory = new Configuration().configure(hibernateCfgXml).buildSessionFactory();
 
         //open Session
         Session session = sessionFactory.openSession();

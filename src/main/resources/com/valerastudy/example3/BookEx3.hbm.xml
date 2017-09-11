@@ -1,14 +1,15 @@
 <?xml version="1.0"?>
 <!-- - - - - - - - - - - - - - - - - - - - - - -
-Model de hibernate mapping pentru exemplu 2
+Model de hibernate mapping pentru exemplu 3
 Varianta clasei fara field-ul ID, car cu un cimp ID in DB
+Se repeta din exemplu precedent dat pe mySQL - pentru ca H2 e buna dar nu prea
  - - - - - - - - - - - - - - - - - - - - - - -->
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
     <!--Asocierea clasei mapate-->
-    <class name="com.valerastudy.example2.BookEx2" table="BOOK_EX2" catalog="valerastudy">
+    <class name="com.valerastudy.example3.BookEx3" table="BOOK" >  <!--catalog="valerastudy"-->
         <!--Coloana ID fara field bookId-->
         <id type="int"
             column="id">
