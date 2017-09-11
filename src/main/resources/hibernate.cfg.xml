@@ -10,11 +10,19 @@
 
         <!-- Database connection settings -->
         <property name="connection.driver_class">org.h2.Driver</property>
-        <property name="connection.url">jdbc:h2:database/test</property>
+
+        <!-- Default h2 url -->
+        <!--<property name="connection.url">jdbc:h2:database/test</property>-->
+
+        <!-- h2 url with creating DB if not exist -->
+        <property name="connection.url">jdbc:h2:./database/test;INIT=CREATE SCHEMA IF NOT EXISTS VALERASTUDY</property>
+
         <property name="connection.username">sa</property>
         <property name="connection.password"/>
 
-        <property name="hibernate.default_schema">PUBLIC</property>
+        <!-- Acestea nu sint pentru H2 shema trebuie declarata in url -->
+        <!--<property name="hibernate.create_schema">VALERASTUDY</property>-->
+        <!--<property name="hibernate.default_schema">VALERASTUDY</property>-->
 
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">1</property>
@@ -32,7 +40,7 @@
         <property name="hbm2ddl.auto">create</property>
 
         <!-- Mappring used for class entity with annotation from JPA -->
-        <mapping class="au.com.ozblog.hibernate.h2.example.User"/>
+        <!--<mapping class="au.com.ozblog.hibernate.h2.example.User"/>-->
 
         <!-- Mappring used for hibernate native hbm.xml -->
         <mapping resource="com/valerastudy/example1/Book.hbm.xml"/>

@@ -27,6 +27,19 @@ public class Example1MainClass {
         //close Session
         session.close();
 
+        // acum citim din BD
+
+        book.setBookId(2);
+        book.setBookName("Book 2");
+        System.out.println("Book reseted before loading from DB: [id = " + book.getBookId() + ", name = " + book.getBookName() + "]");
+        session = sessionFactory.openSession();
+        session.beginTransaction();
+        book = session.get(Book.class, 1);
+        session.getTransaction().commit();
+        session.close();
+
+        System.out.println("Book reseted after loading from DB: [id = " + book.getBookId() + ", name = " + book.getBookName() + "]");
+
         //close SessionFactory
         sessionFactory.close();
     }
