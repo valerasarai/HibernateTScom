@@ -1,6 +1,6 @@
 package com.valerastudy.example1;
 
-public class Book {
+public class BookEx1 {
     private int bookId;
     private String bookName;
 

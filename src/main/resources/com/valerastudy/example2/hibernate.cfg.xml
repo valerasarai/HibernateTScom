@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">org.h2.Driver</property>
+
+        <!-- Default h2 url -->
+        <!--<property name="connection.url">jdbc:h2:database/test</property>-->
+
+        <!-- h2 url with creating DB if not exist -->
+        <property name="connection.url">jdbc:h2:./database/test;INIT=CREATE SCHEMA IF NOT EXISTS VALERASTUDY</property>
+
+        <property name="connection.username">sa</property>
+        <property name="connection.password"/>
+
+        <!-- Acestea nu sint pentru H2 shema trebuie declarata in url -->
+        <!--<property name="hibernate.create_schema">VALERASTUDY</property>-->
+        <!--<property name="hibernate.default_schema">VALERASTUDY</property>-->
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">1</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.H2Dialect</property>
+
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">create</property>
+
+        <!-- Mappring used for class entity with annotation from JPA -->
+        <!--<mapping class="au.com.ozblog.hibernate.h2.example.User"/>-->
+
+        <!-- Mappring used for hibernate native hbm.xml -->
+        <mapping resource="com/valerastudy/example2/BookEx2.hbm.xml"/>
+
+    </session-factory>
+
+</hibernate-configuration>

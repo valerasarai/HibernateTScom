@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!-- - - - - - - - - - - - - - - - - - - - - - -
+Model de hibernate mapping pentru exemplu 2
+Varianta clasei fara field-ul ID, car cu
+ - - - - - - - - - - - - - - - - - - - - - - -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.valerastudy.example2.BookEx2" table="BOOK_EX2" catalog="valerastudy">
+        <id type="int"
+            column="id">
+            <generator class="native"/>
+        </id>
+        <property name="BookName"
+                  type="string">
+            <column name="BOOK_NAME"
+                    length="100"
+                    not-null="false"
+                    unique="false" />
+        </property>
+        <property name="BookCategory"
+                  type="string">
+            <column name="BOOK_CATEGORY"
+                    length="100"
+                    not-null="false"
+                    unique="false" />
+        </property>
+    </class>
+</hibernate-mapping>

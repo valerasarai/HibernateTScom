@@ -1,17 +1,18 @@
-package com.valerastudy.example1;
+package com.valerastudy.example2;
 
+import com.valerastudy.example1.BookEx1;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class Example1MainClass {
+public class Example2MainClass {
     public static void main(String[] args) {
-        BookEx1 book = new BookEx1();
-        book.setBookId(1);
+        BookEx2 book = new BookEx2();
         book.setBookName("Book 1");
+        book.setBookCategory("Category 1");
 
         //open SessionFactory
-        SessionFactory sessionFactory = new Configuration().configure("com\\valerastudy\\example1\\hibernate.cfg.xml").buildSessionFactory();
+        SessionFactory sessionFactory = new Configuration().configure("com\\valerastudy\\example2\\hibernate.cfg.xml").buildSessionFactory();
 
         //open Session
         Session session = sessionFactory.openSession();
@@ -29,16 +30,19 @@ public class Example1MainClass {
 
         // acum citim din BD
 
-        book.setBookId(2);
         book.setBookName("Book 2");
-        System.out.println("Book reseted before loading from DB: [id = " + book.getBookId() + ", name = " + book.getBookName() + "]");
+        book.setBookCategory("Category 2");
+
+        System.out.println("Book reseted before loading from DB: [id = " + book.getBookName() + ", name = " + book.getBookCategory() + "]");
         session = sessionFactory.openSession();
         session.beginTransaction();
-        book = session.get(BookEx1.class, 1);
+
+        book = session.get(BookEx2.class, 1);
+
         session.getTransaction().commit();
         session.close();
 
-        System.out.println("Book reseted after loading from DB: [id = " + book.getBookId() + ", name = " + book.getBookName() + "]");
+        System.out.println("Book reseted before loading from DB: [id = " + book.getBookName() + ", name = " + book.getBookCategory() + "]");
 
         //close SessionFactory
         sessionFactory.close();
