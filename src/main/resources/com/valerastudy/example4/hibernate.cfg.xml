@@ -16,6 +16,7 @@
         <property name="hbm2ddl.auto">update</property>
         <mapping resource="com/valerastudy/example4/BookEx4.hbm.xml"/>
         <mapping resource="com/valerastudy/example4/AuthorsEx4.hbm.xml"/>
+        <mapping resource="com/valerastudy/example4/PublishingEx4.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

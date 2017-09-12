@@ -2,7 +2,7 @@
 
 <!-- - - - - - - - - - - - - - - - - - - - - - -
 Exemplu cu mostenirea
-Clasa mostenitoare 1
+Clasa mostenitoare 2
  - - - - - - - - - - - - - - - - - - - - - - -->
 
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
@@ -10,20 +10,20 @@ Clasa mostenitoare 1
 
 <hibernate-mapping>
     <!--Asocierea clasei mapate-->
-    <subclass name="com.valerastudy.example4.AuthorsEx4"
+    <subclass name="com.valerastudy.example4.PublishingEx4"
               extends="com.valerastudy.example4.BookEx4"
-              discriminator-value="A"
-              entity-name="com.valerastudy.example4.AuthorsEx4">
+              discriminator-value="P"
+              entity-name="com.valerastudy.example4.PublishingEx4">
         <!--Coloana pentru field bookId-->
-        <property name="authorsId"
+        <property name="publishingId"
                   type="java.lang.Integer">
-            <column name="AUTHORS_ID"/>
+            <column name="PUBLISHING_ID"/>
         </property>
         <!--Coloana pentru field bookName-->
         <property
-                name="authorsName"
+                name="publishingName"
                 type="string">
-            <column name="AUTHORS_NAME"
+            <column name="PUBLISHING_NAME"
                     length="100"
                     not-null="false"
                     unique="false"/>

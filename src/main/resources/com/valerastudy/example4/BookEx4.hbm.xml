@@ -10,13 +10,20 @@ Clasa parinte
 
 <hibernate-mapping>
     <!--Asocierea clasei mapate-->
-    <class name="com.valerastudy.example4.BookEx4" table="BOOK">
+    <class name="com.valerastudy.example4.BookEx4"
+           table="BOOK"
+           discriminator-value="B"
+    >
+
         <!--Coloana pentru field bookId-->
         <id name="bookId"
             type="java.lang.Integer">
             <column name="BOOK_ID"/>
             <generator class="identity"/>
         </id>
+
+        <discriminator column="CLASS_TYPE" type="string" />
+
         <!--Coloana pentru field bookName-->
         <property
                 name="bookName"
