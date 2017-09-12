@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - -
+Exemplu cu mostenirea
+Clasa mostenitoare 2
+ - - - - - - - - - - - - - - - - - - - - - - -->
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <!--Asocierea clasei mapate-->
+    <joined-subclass name="com.valerastudy.example5.PublishingEx5"
+                     extends="com.valerastudy.example5.BookEx5"
+                     entity-name="com.valerastudy.example5.PublishingEx5"
+                     table="PUBLISHING">
+
+        <key column="BOOK_ID"/>
+
+        <!--Coloana pentru field bookId-->
+        <property name="publishingId"
+                  type="java.lang.Integer">
+            <column name="PUBLISHING_ID"/>
+        </property>
+        <!--Coloana pentru field bookName-->
+        <property
+                name="publishingName"
+                type="string">
+            <column name="PUBLISHING_NAME"
+                    length="100"
+                    not-null="false"
+                    unique="false"/>
+        </property>
+    </joined-subclass>
+</hibernate-mapping>

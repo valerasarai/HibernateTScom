@@ -1,0 +1,22 @@
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/hibernate</property>
+        <property name="connection.username">root</property>
+        <!--on work computer-->
+        <property name="connection.password">root</property>
+        <!--on home computer-->
+        <!--<property name="connection.password">root123</property>-->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="current_session_context_class">thread</property>
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+        <property name="show_sql">true</property>
+        <!-- update -->
+        <property name="hbm2ddl.auto">update</property>
+        <mapping resource="com/valerastudy/example5/BookEx5.hbm.xml"/>
+        <mapping resource="com/valerastudy/example5/AuthorsEx5.hbm.xml"/>
+        <mapping resource="com/valerastudy/example5/PublishingEx5.hbm.xml"/>
+
+    </session-factory>
+</hibernate-configuration>
