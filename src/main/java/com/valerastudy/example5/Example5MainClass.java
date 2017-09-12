@@ -27,10 +27,25 @@ public class Example5MainClass {
         Session session = sessionFactory.openSession();
 
 // ------------------------------------------------------------------------------------------------------------
+//        Create books for DB
+        List<BookEx5> books = new ArrayList<BookEx5>();
+
+        for (int i = 1; i <= 5; i++) {
+            books.add(i-1, new BookEx5(i, "Book " + i));
+        }
+
+        session.beginTransaction();
+        for (BookEx5 book : books) session.save(book);
+        session.getTransaction().commit();
+        session.close();
+
+// ------------------------------------------------------------------------------------------------------------
 //        Extract all book from DB and create List of Books
+        books = null;
+        session = sessionFactory.openSession();
         session.beginTransaction();
         Query query = session.createQuery("from BookEx5");
-        List<BookEx5> books = query.list();
+        books = query.list();
         session.getTransaction().commit();
         session.close();
 
