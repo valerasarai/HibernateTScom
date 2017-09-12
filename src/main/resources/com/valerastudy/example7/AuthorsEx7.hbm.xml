@@ -10,7 +10,7 @@ Clasa 2 cu field de tip clasa
 
 <hibernate-mapping>
     <!--Asocierea clasei mapate-->
-    <class name="com.valerastudy.example6.AuthorsEx6"
+    <class name="com.valerastudy.example7.AuthorsEx7"
            table="AUTHORS">
         <!--Coloana pentru field bookId-->
         <id name="authorsId"
@@ -27,11 +27,11 @@ Clasa 2 cu field de tip clasa
                     not-null="false"
                     unique="false"/>
         </property>
-        <many-to-one name="book"
-                     column="BOOK_ID"
-                     unique="false"
-                     class="com.valerastudy.example6.BookEx6"
-                     not-null="true"
-                     lazy="false"/>
+        <list name="books" cascade="all" lazy="false" table="AUTHORS_BOOK">
+            <key column="AUTHORS_ID_KEY"/>
+            <list-index column="idx"/>
+            <many-to-many class="com.valerastudy.example6.BookEx6"/>
+        </list>
+
     </class>
 </hibernate-mapping>

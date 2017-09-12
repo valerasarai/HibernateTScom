@@ -21,7 +21,7 @@
         <!-- update -->
         <property name="hbm2ddl.auto">create</property>
         <mapping resource="com/valerastudy/example6/BookEx6.hbm.xml"/>
-        <mapping resource="com/valerastudy/example6/AuthorsEx6.hbm.xml"/>
+        <mapping resource="com/valerastudy/example7/AuthorsEx7.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>
