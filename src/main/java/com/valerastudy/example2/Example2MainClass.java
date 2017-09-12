@@ -1,5 +1,11 @@
 package com.valerastudy.example2;
 
+/*
+* Exemplu 2
+* Hibernate curat cu H2 DB
+* Maparea obiectului care nu contine field-ul ID dar care exista in DB
+*/
+
 import com.valerastudy.example1.BookEx1;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

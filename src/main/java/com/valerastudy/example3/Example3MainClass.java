@@ -1,7 +1,13 @@
 package com.valerastudy.example3;
+
 /*
+* Exemplu 3
+* Hibernate curat cu mySQL DB
+* Maparea obiectului care nu contine field-ul ID dar care exista in DB
+
     Aici este aceeasi fignea ca in exemplu 2 numai ca pe mySQL, pentru a vedea concret ce se intimpla
     este ambiguu acest H2
+
 */
 
 import org.hibernate.Session;

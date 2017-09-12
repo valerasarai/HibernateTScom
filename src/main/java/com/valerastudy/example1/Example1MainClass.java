@@ -1,5 +1,10 @@
 package com.valerastudy.example1;
 
+/*
+* Exemplu 1
+* Hibernate curat cu H2 DB
+*/
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

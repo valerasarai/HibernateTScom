@@ -14,7 +14,8 @@
         <property name="show_sql">true</property>
         <!-- update -->
         <property name="hbm2ddl.auto">update</property>
-        <mapping resource="com/valerastudy/BookGenerator/BookGen.hbm.xml"/>
+        <mapping resource="com/valerastudy/example4/BookEx4.hbm.xml"/>
+        <mapping resource="com/valerastudy/example4/AuthorsEx4.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>
