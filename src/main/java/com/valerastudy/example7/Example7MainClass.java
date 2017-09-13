@@ -103,67 +103,6 @@ public class Example7MainClass {
         for (AuthorsEx7 author : authors) System.out.println(author.toString());
         System.out.println();
 
-/*
-// ------------------------------------------------------------------------------------------------------------
-//        Manipulari mai complicate cu obiectele
-//        sau poate mie mi se pare asa
-
-        // crearea de autori noi
-        for (int i = 1; i <= 5; i++) {
-            authors.add(new AuthorsEx7(authors.size() + 1, "Author " + (authors.size() + 1), books.get(i - 1)));
-        }
-
-        // crearea unui obiect Book nou
-        books.add(new BookEx6((books.size() + 1), "Book " + (books.size() + 1)));
-
-        // crearea unui obiect Authors cu acel Book nou
-        authors.add(new AuthorsEx7((authors.size() + 1), "Author " + (authors.size() + 1), books.get((books.size() - 1))));
-
-//        Print all data before commit
-        System.out.println();
-        System.out.println("Print all book before commit 2:");
-        for (BookEx6 book : books) System.out.println(book.toString());
-        System.out.println();
-        System.out.println();
-        System.out.println("Print all Authors before commit 2:");
-        for (AuthorsEx7 author : authors) System.out.println(author.toString());
-        System.out.println();
-
-//        Save/Update all to/in DB
-        session = sessionFactory.openSession();
-        session.beginTransaction();
-
-        for (BookEx6 book : books) session.saveOrUpdate(book);
-        for (AuthorsEx7 author : authors) session.saveOrUpdate(author);
-
-        session.getTransaction().commit();
-        session.close();
-
-        books = null;
-        authors = null;
-
-//        Extract all data from DB
-        session = sessionFactory.openSession();
-        session.beginTransaction();
-
-        query = session.createQuery("from BookEx6");
-        books = query.list();
-
-        query = session.createQuery("from AuthorsEx6");
-        authors = query.list();
-
-        session.getTransaction().commit();
-        session.close();
-
-//        Print all data
-        System.out.println();
-        for (BookEx6 book : books) System.out.println(book.toString());
-        System.out.println();
-        System.out.println();
-        for (AuthorsEx7 author : authors) System.out.println(author.toString());
-        System.out.println();
-
-*/
 
         sessionFactory.close();
     }
