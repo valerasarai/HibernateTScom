@@ -50,7 +50,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "BookEx8{" +
+        return "Book{" +
                 "bookId=" + bookId +
                 ", bookName='" + bookName + '\'' +
                 ", bookAuthor='" + bookAuthorName + '\'' +

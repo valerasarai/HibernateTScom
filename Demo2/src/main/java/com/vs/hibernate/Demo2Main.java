@@ -5,7 +5,6 @@ package com.vs.hibernate;/*
 */
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import org.hibernate.Criteria;
@@ -19,26 +18,29 @@ import org.hibernate.criterion.Property;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.query.Query;
 
+
 public class Demo2Main {
 
-    public static String hibernateCfgXml = "com\\valerastudy\\example8\\hibernate.cfg.xml";
+    public static String hibernateCfgXml = "hibernate.cfg.xml";
 
     public static void main(String[] args) {
+
+        // business layer
+        List<Book> books;
+
+        books = generateBooks(10);
+        printList("Print all books before commit:", books);
+
+
         SessionFactory sessionFactory = new Configuration().configure(hibernateCfgXml).buildSessionFactory();
         Session session = sessionFactory.openSession();
 
 // ------------------------------------------------------------------------------------------------------------
 // initializare baza de date
 // ------------------------------------------------------------------------------------------------------------
-//        Create books
-        List<Book> books = new ArrayList<Book>();
 
-        for (int i = 1; i <= 10; i++) {
-            books.add(new Book(i, "Book " + i, "Author " + i, new Random().nextInt(500)));
-        }
 
-//        Print all books
-        printList("Print all books before commit:", books);
+
 
 // ------------------------------------------------------------------------------------------------------------
 //        Insert all books
@@ -307,18 +309,18 @@ public class Demo2Main {
         sessionFactory.close();
     }
 
-    public static void printList(String message, List list) {
-        System.out.println("\n" + message);
-        Iterator iterator = list.iterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next().toString());
+    private static List<Book> generateBooks(int numberOfBooks) {
+        List<Book> books = new ArrayList<Book>();
+        for (int i = 1; i <= numberOfBooks; i++) {
+            books.add(new Book(i, "Book " + i, "Author " + i, new Random().nextInt(500)));
         }
+        return books;
     }
 
-    public static void printList(String message, ArrayList list) {
+    public static void printList(String message, List list) {
         System.out.println("\n" + message);
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i).toString());
+        for (Object item : list) {
+            System.out.println(item);
         }
     }
 }
