@@ -6,7 +6,11 @@
 
     <groupId>com.valerastudy</groupId>
     <artifactId>VSSTUDY</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>Demo2</module>
+    </modules>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
